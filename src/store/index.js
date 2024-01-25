@@ -1,7 +1,7 @@
 import { store } from 'quasar/wrappers'
 import { createStore } from 'vuex'
 
-// import example from './module-example'
+import listStore from './modules/listStore'
 
 /*
  * If not building with SSR mode, you can
@@ -13,14 +13,15 @@ import { createStore } from 'vuex'
  */
 
 export default store(function (/* { ssrContext } */) {
+  // todo - implement local/persistent storage plugin so user changes are saved after page reload
   const Store = createStore({
     modules: {
-      // example
+      listStore
     },
 
     // enable strict mode (adds overhead!)
     // for dev mode and --debug builds only
-    strict: process.env.DEBUGGING
+    strict: false
   })
 
   return Store

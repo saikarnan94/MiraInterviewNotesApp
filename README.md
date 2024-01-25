@@ -1,33 +1,22 @@
-# Notepad Project (notepad-project)
+## Notepad Project (notepad-project)
 
-A Quasar Project
-
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+A project by Nick Zuccarelli for testing Vue3/Quasar/JavaScript knowledge for new candidates!
 
 
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
+Please do the following when editing this project:
+
+1. Fork the project using GitHub
+2. Clone the repo to your device.
+3. `npm install` to install all package dependencies
+4. `quasar dev` will run a dev server on localhost. Your browser should automatically open
+5. Perform any fixes/changes as required (hint: find all usages of "hint" or "todo" to discover some tasks to complete)
+6. Give the project your own UI flare! Impress me. You may also choose to extend on some components with extra functionality
+7. Commit all your changes in a **single** commit to your forked repo
+8. Contact Nick when you're done :)
 
 
+### Useful resources:
 
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+- Vue 3 docs: https://vuejs.org/
+- Quasar library: https://quasar.dev/vue-components/
+- Materials icons: https://pictogrammers.com/library/mdi/
