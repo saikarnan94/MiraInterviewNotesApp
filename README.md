@@ -5,8 +5,8 @@ A project by Nick Zuccarelli for testing Vue3/Quasar/JavaScript knowledge for ne
 
 Please do the following when editing this project:
 
-1. Fork the project using GitHub
-2. Clone the repo to your device.
+1. Clone the repo to your device
+2. Commit the existing contents to a new GitHub repo
 3. `npm install` to install all package dependencies
 4. `quasar dev` will run a dev server on localhost. Your browser should automatically open
 5. Perform any fixes/changes as required (hint: find all usages of "hint" or "todo" to discover some tasks to complete)
