@@ -1,5 +1,6 @@
 import { store } from 'quasar/wrappers'
 import { createStore } from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 
 import listStore from './modules/listStore'
 
@@ -13,7 +14,7 @@ import listStore from './modules/listStore'
  */
 
 export default store(function (/* { ssrContext } */) {
-  // todo - implement local/persistent storage plugin so user changes are saved after page reload
+  // todo - implement local/persistent storage plugin so user changes are saved after page reload - Done
   const Store = createStore({
     modules: {
       listStore
@@ -21,7 +22,8 @@ export default store(function (/* { ssrContext } */) {
 
     // enable strict mode (adds overhead!)
     // for dev mode and --debug builds only
-    strict: false
+    strict: false,
+    plugins: [createPersistedState()]
   })
 
   return Store

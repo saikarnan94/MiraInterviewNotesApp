@@ -2,14 +2,15 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
+          <q-icon left size="2em" name="mdi-note-text-outline" />
         <q-toolbar-title class="text-weight-bold">
           Notepad Project
         </q-toolbar-title>
-
         <q-btn
           icon="mdi-plus"
           flat
           round
+          label="Create Item"
         >
           <q-tooltip>
             Create Item
@@ -22,6 +23,7 @@
                   dense
                   clickable
                   v-close-popup
+                  @click="$refs.noteDialog.open()"
                 >
                   <q-item-section>
                     <q-item-label>
@@ -48,25 +50,27 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container class="bg-blue-grey-1">
+    <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
 
   <CreateChecklistDialog ref="checklistDialog" />
+  <CreateNoteDialog ref="noteDialog" />
 </template>
 
 <script>
 import { defineComponent } from 'vue'
+import CreateChecklistDialog from 'components/CreateChecklistDialog.vue'
+import CreateNoteDialog from 'components/CreateNoteDialog.vue'
 
-import CreateChecklistDialog from "components/CreateChecklistDialog.vue";
-
-// todo - create note dialog not implemented
+// todo - create note dialog not implemented - Done
 
 export default defineComponent({
   name: 'MainLayout',
   components: {
-    CreateChecklistDialog
+    CreateChecklistDialog,
+    CreateNoteDialog
   }
 })
 </script>

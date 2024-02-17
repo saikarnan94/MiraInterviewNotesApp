@@ -1,6 +1,6 @@
 <template>
   <Drag
-    class="col-3"
+    class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
     handle=".drag-handle"
     @dragstart="isDragging = true"
     @dragend="isDragging = false"
@@ -31,21 +31,20 @@
           dense
           round
         >
-          <q-menu>
+          <q-menu ref="menu">
             <q-card style="min-width: 150px;">
               <q-list padding>
                 <q-item
                   dense
                   clickable
-                  v-close-popup
-                  @click="$emit('delete')"
+                  @click="confirm"
                 >
                   <q-item-section side>
                     <q-icon name="mdi-trash-can" />
                   </q-item-section>
 
                   <q-item-section>
-                    <q-item-label class="text-bold text-red-7">
+                    <q-item-label class="text-bold text-white-7">
                       Delete
                     </q-item-label>
                   </q-item-section>
@@ -75,6 +74,7 @@
 
 <script>
 import { Drag } from 'vue-easy-dnd'
+import { useQuasar } from 'quasar'
 
 export default {
   props: {
@@ -90,6 +90,20 @@ export default {
     return {
       isDragging: false
     }
+  },
+  setup (props, { emit }) {
+    const $q = useQuasar()
+    function confirm () {
+      $q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to delete?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        emit('delete')
+      })
+    }
+    return { confirm }
   }
 }
 </script>

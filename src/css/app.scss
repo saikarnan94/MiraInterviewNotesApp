@@ -1,12 +1,21 @@
 // app global css in SCSS form
 
+.q-layout__section--marginal {
+  background-color: var(--q-primary);
+}
+
 .note {
   background-color: $yellow-1;
-  border: 1px dashed $grey-8;
+}
 
-  .q-toolbar__title {
-    font-family: "Courier New", Roboto, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
-  }
+.note:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 22px 22px 0;
+  border-style: solid;
+  border-color: rgb(228, 229, 197) transparent;
 }
 
 .list-item {
@@ -22,3 +31,46 @@
 .whitespace-preline {
   white-space: pre-line;
 }
+
+.checklist {
+  background-color: rgb(230, 247, 250); 
+}
+
+.checklist:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 22px 22px 0;
+  border-style: solid;
+  border-color: rgb(174, 198, 202) transparent;
+}
+
+.q-item--clickable {
+  background: #4ab2ca;
+  color: #fff;
+  font-weight: 500;
+  margin: 10px 20px 10px 20px;
+  opacity: 0.9;
+  border-radius: 3px;;
+}
+
+body.desktop .q-focus-helper:after {
+  background: #000;
+}
+
+.q-item--clickable .q-icon {
+  color: #fff;
+}
+
+.q-btn:before {
+  box-shadow: none;
+}
+.trash-icon {
+  color: rgb(0, 0, 0);
+}
+
+.q-toolbar, .q-card > div:not(:first-child) {
+  border-bottom: 1px solid #ccc;
+}
+

@@ -12,7 +12,7 @@
     />
 
     <template #date>
-      {{ checklist.created_at }}
+      {{ parsedDate }}
     </template>
 
     <template #footer>
@@ -26,6 +26,7 @@
 <script>
 import ListItemWrapper from 'components/ListItemWrapper.vue'
 import ChecklistOptions from 'components/listItemTypes/checklist/ChecklistOptions.vue'
+import { DateTime } from 'luxon'
 
 export default {
   components: {
@@ -40,8 +41,12 @@ export default {
   emits: ['delete'],
   computed: {
     doneItemsAmount () {
-      // todo - not returning correct amount of completed counters
-      return 2
+      // todo - not returning correct amount of completed counters - done
+      const completedItems = this.checklist.value.filter(item => item.done)
+      return completedItems.length
+    },
+    parsedDate () {
+      return DateTime.fromMillis(this.checklist.created_at).toFormat('MMM dd, yyyy \'at\' hh:mm a')
     }
   }
 }

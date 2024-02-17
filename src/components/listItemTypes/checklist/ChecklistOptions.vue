@@ -6,12 +6,14 @@
       v-model:label="line.label"
       :key="key"
       :line="line"
+      @delete="deleteLine(key)"
     />
 
     <q-item
       dense
       clickable
       @click="addLine"
+      :disable="hasItemLimitReached"
     >
       <q-item-section side>
         <q-icon name="mdi-plus" />
@@ -47,14 +49,22 @@ export default {
     ChecklistLine
   },
   emits: ['update:model-value'],
+  computed: {
+    hasItemLimitReached () {
+      return this.modelValue.length >= 10
+    }
+  },
   methods: {
     addLine () {
-      // todo - add limit of 10 checklist items per list, disable button if limit is reached
-      const arr = JSON.parse(JSON.stringify(this.modelValue))
-      arr.push(defaultChecklistLine())
-      this.$emit('update:model-value', arr)
+      // todo - add limit of 10 checklist items per list, disable button if limit is reached - Done
+      if (!this.hasItemLimitReached) {
+        const arr = JSON.parse(JSON.stringify(this.modelValue))
+        arr.push(defaultChecklistLine())
+        this.$emit('update:model-value', arr)
+      }
     },
     deleteLine (index) {
+      this.modelValue.splice(index, 1)
     }
   }
 }

@@ -6,6 +6,7 @@
       <q-checkbox
         :model-value="line.done"
         dense
+        size="sm"
         @update:model-value="$emit('update:done', $event)"
       />
     </q-item-section>
@@ -19,11 +20,20 @@
         @update:model-value="$emit('update:label', $event)"
       />
     </q-item-section>
+    <q-item-section side>
+      <q-btn
+        class="no-shadow trash-icon"
+        icon="mdi-trash-can"
+        round
+        size="sm"
+        @click="$emit('delete')"
+      />
+    </q-item-section>
   </q-item>
 </template>
 
 <script>
-// todo - add ability to delete a line
+// todo - add ability to delete a line - Done
 
 export default {
   props: {
@@ -32,6 +42,6 @@ export default {
       required: true
     }
   },
-  emits: ['update:done', 'update:label']
+  emits: ['update:done', 'update:label', 'deleteLine']
 }
 </script>

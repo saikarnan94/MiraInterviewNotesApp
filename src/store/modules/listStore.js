@@ -25,7 +25,7 @@ const defaultStates = () => {
           },
           {
             label: 'Cook dinner',
-            done: true
+            done: false
           },
           {
             label: 'Walk dog',
@@ -47,6 +47,14 @@ export default {
       state.list.push(payload)
     },
     removeListItem (state, key) {
+      state.list.splice(key, 1)
+    },
+    addNote (state, payload) {
+      payload.uuid = generateUuid()
+      payload.created_at = Date.now()
+      state.list.push(payload)
+    },
+    removeNote (state, key) {
       state.list.splice(key, 1)
     }
   },
