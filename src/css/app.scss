@@ -95,7 +95,8 @@ body.desktop .q-hoverable:hover > .q-focus-helper {
 }
 
 .q-list {
-  border: 1px 0px 1px 0px solid #b2b2b2;
+  border-top: 1px solid #b2b2b2;
+  border-bottom: 1px solid #b2b2b2;
 }
 
 .q-card__section {
