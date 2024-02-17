@@ -18,6 +18,7 @@
         borderless
         placeholder="Add value..."
         @update:model-value="$emit('update:label', $event)"
+        :class="strikeoutClass"
       />
     </q-item-section>
     <q-item-section side>
@@ -42,6 +43,13 @@ export default {
       required: true
     }
   },
-  emits: ['update:done', 'update:label', 'deleteLine']
+  emits: ['update:done', 'update:label', 'deleteLine'],
+  computed: {
+    strikeoutClass () {
+      return {
+        strikeout: this.line.done
+      }
+    }
+  }
 }
 </script>
