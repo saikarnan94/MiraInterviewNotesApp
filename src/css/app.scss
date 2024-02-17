@@ -3,6 +3,7 @@ body {
   background-color: #023e8a; /* For browsers that do not support gradients */
   background-image: linear-gradient(#023e8a, #00b4d8);
 }
+
 .q-layout__section--marginal {
   background-color: #023e8a;
   height: 65px;
@@ -105,21 +106,4 @@ body.desktop .q-hoverable:hover > .q-focus-helper {
 
 .q-pa-md {
   padding: 36px 16px;
-}
-
-@keyframes rotate {
-  from {transform: rotate(0deg);}
-  from {transform: rotate(360deg);}
-}
-
-.wave.-one {
-  animation: rotate 10000ms infinite linear;
-  opacity: 5%;
-  background: white;
-}
-
-.wave.-two {
-  animation: rotate 6000ms infinite linear;
-  opacity: 10%;
-  background: white;
 }
