@@ -1,7 +1,12 @@
 // app global css in SCSS form
-
+body {
+  background-color: #023e8a; /* For browsers that do not support gradients */
+  background-image: linear-gradient(#023e8a, #00b4d8);
+}
 .q-layout__section--marginal {
-  background-color: var(--q-primary);
+  background-color: #023e8a;
+  height: 65px;
+  padding: 10px 5px 10px 5px;
 }
 
 .note {
@@ -70,10 +75,51 @@ body.desktop .q-focus-helper:after {
   color: rgb(0, 0, 0);
 }
 
-.q-toolbar, .q-card > div:not(:first-child) {
-  border-bottom: 1px solid #ccc;
-}
-
 .strikeout {
   text-decoration: line-through;
+}
+
+body.desktop .q-hoverable:hover > .q-focus-helper {
+  background: transparent;
+  opacity: 0.15;
+}
+
+.q-btn--round {
+  border-radius: 0%;
+  padding: 0;
+  min-width: 0em;
+  min-height: 0em;
+  transition: 0.5s;
+  background-color: none;
+}
+
+.q-list {
+  border: 1px 0px 1px 0px solid #b2b2b2;
+}
+
+.q-card__section {
+  border-top: 1px solid #b2b2b2;
+  border-bottom: 1px solid #b2b2b2;
+  padding: 15px;
+}
+
+.q-pa-md {
+  padding: 36px 16px;
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  from {transform: rotate(360deg);}
+}
+
+.wave.-one {
+  animation: rotate 10000ms infinite linear;
+  opacity: 5%;
+  background: white;
+}
+
+.wave.-two {
+  animation: rotate 6000ms infinite linear;
+  opacity: 10%;
+  background: white;
 }
