@@ -1,11 +1,18 @@
 // app global css in SCSS form
 body {
-  background-color: #023e8a; /* For browsers that do not support gradients */
-  background-image: linear-gradient(#023e8a, #00b4d8);
+  /*background-color: #023e8a;
+  background-image: linear-gradient(#023e8a, #00b4d8);*/
+  background-image: url("../assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .q-layout__section--marginal {
-  background-color: #023e8a;
+  background-image: url("../assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% ;
+  box-shadow: none;
+  /*background-color: #023e8a;*/
   height: 65px;
   padding: 10px 5px 10px 5px;
 }
